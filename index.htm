@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="image/logo icon.jpg">
+    <title>Fast Food</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="judulheader">
+                <h2 class="judulh"><span>Fast food<i class="fa-solid fa-burger"></i></span> & Drink
+                    <i class="fa-solid fa-glass-water"></i>
+                </h2>
+            </div>
+
+            <div class="box-keranjang">
+                <button class="keranjang" id="keranjang" onclick="showCart()">
+                    <i id="icon-keranjang" class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-notification" class="notification">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-up" data-aos="fade-down">
+        <path fill="#ff5500" fill-opacity="1"
+            d="M0,32L40,48C80,64,160,96,240,128C320,160,400,192,480,213.3C560,235,640,245,720,224C800,203,880,149,960,138.7C1040,128,1120,160,1200,149.3C1280,139,1360,85,1400,58.7L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+        </path>
+    </svg>
+
+    <section class="menu" id="foodMenu">
+        <div class="menu-content">
+            <div class="judulmenu" data-aos="fade-up">
+                <h2>food menu</h2>
+                <a href="#drinkMenu" class="adrink adrink-color">
+                    drink
+                    <i class="fa-solid fa-glass-water"></i>
+                    <i class="fa-solid fa-arrow-turn-down"></i>
+                </a>
+            </div>
+
+            <div class="box-menu">
+                <div class="item" data-name="burger" data-price="10000" data-aos="fade-up">
+                    <img src="image/burger.jpg">
+                    <div class="box-harga">
+                        <h2>burger</h2>
+                        <p>rp 10.000</p>
+                        <button class="add-to-cart" onclick="addToCart('burger', 10000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="kebab" data-price="15000" data-aos="fade-up">
+                    <img src="image/kebab1.jpg">
+                    <div class="box-harga">
+                        <h2>kebab</h2>
+                        <p>rp 15.000</p>
+                        <button class="add-to-cart" onclick="addToCart('kebab', 15000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="spaghetti" data-price="20000" data-aos="fade-up">
+                    <img src="image/saghetti1.jpg">
+                    <div class="box-harga">
+                        <h2>spaghetti</h2>
+                        <p>rp 20.000</p>
+                        <button class="add-to-cart" onclick="addToCart('spaghetti', 20000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="pizza" data-price="100000" data-aos="fade-up">
+                    <img src="image/pizza1.jpg">
+                    <div class="box-harga">
+                        <h2>pizza</h2>
+                        <p>rp 100.000</p>
+                        <button class="add-to-cart" onclick="addToCart('pizza', 100000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="hotdog" data-price="10000" data-aos="fade-up">
+                    <img src="image/hotdog.jpg">
+                    <div class="box-harga">
+                        <h2>hotdog</h2>
+                        <p>rp 10.000</p>
+                        <button class="add-to-cart" onclick="addToCart('hotdog', 10000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="drinkMenu">
+        <div class="menu-content">
+            <div class="judulmenu" data-aos="fade-up">
+                <h2>drink menu</h2>
+                <a href="#foodMenu" class="afood afood-color">
+                    food
+                    <i class="fa-solid fa-burger"></i>
+                    <i class="fa-solid fa-arrow-turn-up"></i>
+                </a>
+            </div>
+
+            <div class="box-menu">
+                <div class="item" data-name="boba milk" data-price="16000" data-aos="fade-up">
+                    <img src="image/boba.jpg">
+                    <div class="box-harga">
+                        <h2>boba milk</h2>
+                        <p>rp 16.000</p>
+                        <button class="add-to-cart" onclick="addToCart('boba milk', 16000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="es buah" data-price="12000" data-aos="fade-up">
+                    <img src="image/es buah.jpg">
+                    <div class="box-harga">
+                        <h2>es buah</h2>
+                        <p>rp 12.000</p>
+                        <button class="add-to-cart" onclick="addToCart('es buah', 12000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="es teler" data-price="10000" data-aos="fade-up">
+                    <img src="image/es teler.jpg">
+                    <div class="box-harga">
+                        <h2>es teler</h2>
+                        <p>rp 10.000</p>
+                        <button class="add-to-cart" onclick="addToCart('es teler', 10000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="es krim kelapa" data-price="20000" data-aos="fade-up">
+                    <img src="image/eskrim kelapa.jpg">
+                    <div class="box-harga">
+                        <h2>es krim kelapa</h2>
+                        <p>rp 20.000</p>
+                        <button class="add-to-cart" onclick="addToCart('es krim kelapa', 20000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item" data-name="jus jambu" data-price="10000" data-aos="fade-up">
+                    <img src="image/jus jambu.jpg">
+                    <div class="box-harga">
+                        <h2>jus jambu</h2>
+                        <p>rp 20.000</p>
+                        <button class="add-to-cart" onclick="addToCart('jus jambu', 20000)">
+                            tambah <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cart-form">
+        <form action="" name="keranjang pesanan" id="cart" method="post" onsubmit="return validateForm()">
+            <div class="judulform">
+                <h2>daftar pesanan</h2>
+            </div>
+
+            <div class="button-atas">
+                <button type="reset" id="reset-button" onclick="removeFromCart()">
+                    hapus pesanan <i class="fa-solid fa-trash"></i>
+                </button>
+
+                <button type="button" class="catatan-button" onclick="buka_catatan()">
+                    catatan <i class="fa-solid fa-comment"></i>
+                </button>
+            </div>
+
+            <textarea id="catatanTextarea" name="catatan" placeholder="mungkin ada yang mau ditambahkan?"></textarea>
+
+            <textarea class="textpesanan" name="daftar pesanan" id="pesanan" rows="5" cols="30" readonly
+                required></textarea>
+
+            <p class="ptotal-harga">Total Harga:<span id="total">.0</span></p>
+
+            <div class="box-nomer-alamat">
+                <input type="number" name="no.wa" id="nomerWa" class="nomer-wa" placeholder="no.wa"
+                    pattern="08[0-9]{9,10}" required>
+                <span class="error-masege" id="phone-error"></span>
+                <input type="text" name="alamat" id="alamat" class="alamat" placeholder="alamat" required>
+            </div>
+
+            <div class="button-bawah">
+                <button type="submit" id="submit-button" onclick="">
+                    Kirim <i class="fa-solid fa-check"></i>
+                </button>
+
+                <button type="button" id="close-cart" onclick="hideCart()">
+                    Tutup <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section class="popup" id="poPup">
+        <div class="popup-content">
+            <span>
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+            <p>
+                selamat menikmati, terima kasih sudah memesan
+                <i class="fa-solid fa-face-smile-wink"></i>
+            </p>
+
+            <button class="button-popup">
+                back
+            </button>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" data-aos="fade-up">
+            <path fill="#ff5500" fill-opacity="1"
+                d="M0,160L40,144C80,128,160,96,240,74.7C320,53,400,43,480,58.7C560,75,640,117,720,154.7C800,192,880,224,960,240C1040,256,1120,256,1200,234.7C1280,213,1360,171,1400,149.3L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+
+        <div class="footer-content">
+            <div class="judul-footer">
+                <h2>silahkan hubungi</h2>
+            </div>
+
+            <div class="isi-footer">
+                <a href="https://wa.me/6285774546860?text=Halo,%20saya%20menghubungi%20Anda%20dari%20situs%20web%20anda."
+                    class="fa-brands fa-whatsapp" id="whatsapp"></a>
+                <a href="mailto:wildeznick@gmail.com" class="fa-regular fa-envelope" id="email"></a>
+                <a href="https://maps.app.goo.gl/r6MvHPvCmU4D1aUv7" class="fa-solid fa-location-dot" id="maps"></a>
+            </div>
+
+            <div class="dev">
+                <div class="content-dev">
+                    <p>maret 2024, dev:</p>
+                    <p class="namadev">m.farrel dwi andhika</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- data aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
+
+    <!-- untuk delay refresh dibrowser -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("loaded");
+        })
+    </script>
+
+    <!-- untuk membuka cart daftar pesanan -->
+    <script>
+        function showCart() {
+            const cartForm = document.querySelector('.cart-form');
+            cartForm.classList.add('buka');
+            cartForm.classList.remove('tutup');
+        }
+
+        function hideCart() {
+            const cartForm = document.querySelector('.cart-form');
+            cartForm.classList.add('tutup');
+            cartForm.classList.remove('buka')
+        }
+    </script>
+
+    <!-- untuk menyembunyikan catatan -->
+    <script>
+        function buka_catatan() {
+            const buttonTextarea = document.getElementById('catatanTextarea');
+            buttonTextarea.classList.toggle('buka');
+        }
+    </script>
+
+    <!-- syarat nomer wa -->
+    <script>
+        function validateForm() {
+            var phoneInput = document.getElementById("nomerWa");
+            var phoneValue = phoneInput.value.trim();
+            var phonePattern = /^08[0-9]{9,10}$/;
+
+            var phoneError = document.getElementById("phone-error");
+
+            if (!phonePattern.test(phoneValue)) {
+                phoneError.innerHTML = "nomer ini harus diawali angka 08 dan panjang digit 11 atau 12";
+                phoneError.style.fontSize = "1.1rem";
+                phoneError.style.width = "100%";
+                phoneError.style.textAlign = "center";
+                phoneError.style.color = "white";
+                phoneError.style.backgroundColor = "red";
+                phoneError.style.position = "relative";
+                phoneError.style.borderRadius = "10px";
+                phoneError.style.padding = "5px";
+                phoneError.style.border = "2px solid white";
+                return false;
+            } else {
+                phoneError.innerHTML = "";
+                phoneError.removeAttribute("style");
+                return true;
+            }
+        }
+
+    </script>
+
+    <!-- untuk menambahkan button item ke daftar pesanan -->
+    <script>
+        let cart = [];
+        let total = 0;
+        let cartNotification = 0;
+
+        function addToCart(item, price) {
+            // Check if the item is already in the cart
+            let existingItem = cart.find(cartItem => cartItem.item === item);
+
+            if (existingItem) {
+                // If the item is already in the cart, increment the quantity
+                existingItem.quantity++;
+            } else {
+                // If the item is not in the cart, add it with quantity 1
+                cart.push({ item, price, quantity: 1 });
+            }
+
+            total += price;
+            updateCart();
+
+            cartNotification++;
+            updateCartNotification();
+        }
+
+        function updateCartNotification() {
+            // Update the notification display
+            document.getElementById("cart-notification").innerText = cartNotification;
+        }
+
+        function updateCart() {
+            let cartText = "";
+            for (let i = 0; i < cart.length; i++) {
+                cartText += `${cart[i].quantity} X ${cart[i].item} Rp.${cart[i].price}\n`;
+            }
+            if (cart.length > 0) {
+                cartText += `Total: Rp. ${total}`;
+            }
+            document.getElementById("pesanan").value = cartText;
+            document.getElementById("total").innerText = `Rp. ${total}`;
+        }
+
+        function formatCurrency(amount) {
+            // Format the amount as currency in Indonesian Rupiah
+            const formatter = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0,
+            });
+            return formatter.format(amount).replace(/\D00$/, '');
+        }
+
+        function removeFromCart() {
+            if (cart.length > 0) {
+                const removedItem = cart.pop();
+                total -= removedItem.price * removedItem.quantity;
+
+                if (removedItem.quantity > 0) {
+                    cartNotification--;
+                } else {
+                    cartNotification -= removedItem.quantity;
+                }
+                cartNotification = 0;
+
+                total = 0;
+                cartNotification = 0;
+                cart = [];
+
+                updateCart();
+                updateCartNotification();
+            }
+        }
+    </script>
+
+    <!-- mengirim data pesanan ke spreadsheet -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbznLV46vcaHFz_odo7vfrZt_SbggTrfRHwesOQ9ZilLUDYfabPp4J48oZBA-x9W67B1AQ/exec'
+        const form = document.forms['keranjang pesanan'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const dynamicTextareaValue = document.getElementById("pesanan").value.trim();
+            if (dynamicTextareaValue === "") {
+                alert("Mohon Di isi Daftar Pesanan, Sebelum dikirim.");
+                return;
+            }
+
+            if (!validateForm()) {
+                return;
+            }
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success!', data);
+                    document.getElementById("catatanTextarea").value = "";
+                    document.getElementById("pesanan").value = "";
+                    document.getElementById("total").innerText = ".0";
+                    document.getElementById("nomerWa").value = "";
+                    document.getElementById("alamat").value = "";
+                    document.getElementById("poPup").style.display = "grid";
+                    cartNotification = 0;
+                    cart = [];
+                    total = 0;
+                    updateCart();
+                    updateCartNotification();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+
+        document.getElementsByClassName("button-popup")[0].onclick = function () {
+            document.getElementById("poPup").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target === document.getElementById("poPup")) {
+                document.getElementById("poPup").style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- untuk typing animation -->
+    <script>
+        window.addEventListener("scroll", function () {
+            var scrollPosition = window.scrollY;
+            var windowHeight = window.innerHeight;
+            var documentPosition = document.body.scrollHeight;
+
+            if (scrollPosition >= documentPosition - windowHeight) {
+                document.querySelector('.namadev').style.animation = "teks 2s steps(20),cursor .5s step-end infinite alternate";
+            } else {
+                document.querySelector('.namadev').style.animation = "none";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
