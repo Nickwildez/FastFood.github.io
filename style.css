@@ -749,6 +749,10 @@ textarea {
     transition:  0.6s ease;
 }
 
+.isi-footer a:hover{
+    transform: translateY(-10px);
+}
+
 .isi-footer #whatsapp::after{
     content: "";
     z-index: -1;
@@ -779,8 +783,6 @@ textarea {
 
 .isi-footer #email:hover::after{
     top: 0;
-<<<<<<< HEAD
-=======
 }
 
 .isi-footer #maps::after{
@@ -842,7 +844,6 @@ textarea {
     from{
         width: 0;
     }
->>>>>>> 41f1e1c76c547b7907ec602b18a1ca1045b58f1f
 }
 
 .isi-footer #maps::after{
