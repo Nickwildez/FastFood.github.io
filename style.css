@@ -1,0 +1,903 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    text-transform: capitalize;
+    text-decoration: none;
+    user-select: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: white;
+    transition: opacity 0.6s ease-in-out;
+    color: black;
+    opacity: 0;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.header-to-bottom {
+    position: fixed;
+    display: grid;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: transparent;
+    bottom: 0;
+    border: none;
+    z-index: 9999;
+}
+
+.nav-content {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    border: none;
+    background-color: #d1eeee;
+    box-shadow: 0 -1px 6px 0 black;
+    border-radius: 15px 15px 0 0;
+}
+
+.nav-content #buttonCartShopping {
+    position: absolute;
+    z-index: 1;
+    left: 75%;
+    top: -90px;
+    display: flex;
+    cursor: pointer;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    background-color: #dbaf00;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    outline: none !important;
+    font-size: 1.7rem;
+    transition: .6s ease;
+}
+
+#buttonCartShopping:hover {
+    transform: translateX(-10px);
+}
+
+#buttonCartShopping::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    transition: .6s ease;
+    background: #ffff00;
+}
+
+#buttonCartShopping:hover::after {
+    width: 100%;
+}
+
+#buttonCartShopping span {
+    font-weight: 400;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.nav-content a {
+    position: relative;
+    color: black;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    outline: none !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    z-index: 1;
+    background-color: transparent;
+    transition: .6s ease;
+}
+
+.nav-content a:hover {
+    background-color: black;
+    color: #ffff00;
+    border-radius: 50%;
+    transform: translateY(-20px);
+}
+
+.home {
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    position: relative;
+    border: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.home-content {
+    display: grid;
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 black;
+    text-align: center;
+    padding: 10px;
+}
+
+.judul-home {
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 20px;
+}
+
+.judul-home h2 {
+    text-align: left;
+    color: white;
+    font-size: 1.7rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 20vh;
+    box-shadow: 0 0 8px 0 black;
+    position: absolute;
+    background-image: url(image/background-burger.jpg);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-home {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    position: relative;
+    border: none;
+    text-align: center;
+    align-items: center;
+}
+
+.text-home h2 {
+    font-size: 1.7rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.text-home p {
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.menu {
+    min-height: 100vh;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu-content {
+    width: 100%;
+    display: grid;
+    position: relative;
+    border-radius: 15px;
+    gap: 40px;
+    text-align: center;
+}
+
+.box-menu {
+    display: grid;
+    position: relative;
+    padding: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.item-menu {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    cursor: pointer;
+    color: black;
+    border-radius: 10px;
+    gap: 10px;
+    border: none;
+}
+
+.item-menu h3 {
+    position: absolute;
+    display: flex;
+    border: none;
+    color: #ffd900;
+    background-color: #000000a8;
+    width: 80px;
+    border-radius: 10px 5px 0 0;
+    top: 0;
+    padding: 5px;
+    text-align: left;
+    z-index: 3;
+}
+
+.item-menu h3 p {
+    color: white;
+    font-weight: 500;
+    display: block;
+    position: relative;
+    border: none;
+}
+
+.item-menu img {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.text-menu {
+    width: 100%;
+    display: grid;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    color: black;
+}
+
+.text-menu h2 {
+    text-align: left;
+    left: 10px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.box-harga-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+
+.box-harga-add p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    display: grid;
+    width: 100%;
+    text-align: left;
+}
+
+.box-harga-add #add-to-cart {
+    font-size: 1.5rem;
+    position: relative;
+    text-align: center;
+    display: grid;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e49c00;
+    transition: .6s ease;
+}
+
+#add-to-cart:hover {
+    background-color: #ffd900;
+}
+
+.showconfirmation {
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.showconfirmation.buka {
+    display: grid;
+    animation-name: fadeUpConfirmation;
+}
+
+@keyframes fadeUpConfirmation{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.showcontent {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    border: none;
+    padding: 10px;
+}
+
+.box-show {
+    width: 100%;
+    box-shadow: 0 0 10px 1px black;
+    border: none;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    gap: 5px;
+}
+
+.box-show #close {
+    position: absolute;
+    padding: 10px;
+    font-size: 1.5rem;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: red;
+}
+
+.box-show h2 {
+    position: relative;
+    display: grid;
+    width: 100%;
+    border: none;
+}
+
+.box-show .box-input-confirmation {
+    width: 100%;
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+
+.box-input-confirmation input[type="image"] {
+    width: 100%;
+    height: 100%;
+    max-height: 20vh;
+    border: none;
+    display: grid;
+    justify-content: center;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container-nama-harga {
+    display: grid;
+    position: relative;
+    width: 100%;
+    border: none;
+}
+
+.container-nama-harga .InputnamaPesanan {
+    width: 100%;
+    display: grid;
+    position: relative;
+    border: none;
+    background: transparent;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.box-label-harga {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    border: none;
+    text-align: left;
+    background: transparent;
+}
+
+.box-label-harga .labelHarga {
+    display: grid;
+    font-weight: 600;
+    position: relative;
+    border: none;
+}
+
+.box-label-harga .InputhargaPesanan {
+    width: 100%;
+    position: relative;
+    display: grid;
+    text-align: left;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 10px;
+    color: black;
+}
+
+.box-ukuran p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    display: block;
+}
+
+.box-ukuran .item-ukuran {
+    display: grid;
+    width: 100%;
+    position: relative;
+    gap: 10px;
+    border: none;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.item-ukuran .btukuran {
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #ffa600;
+    transition: .6s ease;
+}
+
+.btukuran:hover {
+    background-color: #a86d00;
+    transform: translateY(-5px);
+}
+
+.textUkuran {
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 1.2rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.textUkuran::placeholder {
+    color: black;
+    position: relative;
+}
+
+.box-show .jumlah-dipesan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.jumlah-dipesan button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #dfdfdf;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.jumlah-dipesan p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    border: none;
+}
+
+.box-totalharga {
+    width: 100%;
+    position: relative;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.box-totalharga h2{
+    width: 100%;
+    position: relative;
+    display: grid;
+    border: none;
+    text-align: left;
+}
+
+.box-totalharga .total-harga {
+    width: 100%;
+    position: relative;
+    display: grid;
+    text-align: left;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 10px;
+    color: black;
+}
+
+.button-to-cart {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-to-cart button {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: #ffa600;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    transition: .6s ease;
+}
+
+.button-to-cart button:hover {
+    background-color: #a86d00;
+}
+
+.form-cart {
+    display: none;
+    position: fixed;
+    top: 0;
+    min-height: 100vh;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    z-index: 10000;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.form-cart::-webkit-scrollbar{
+    display: none;
+}
+
+.form-cart.bukaf {
+    display: grid;
+    animation-name: openFormRight;
+}
+
+@keyframes openFormRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-form-cart {
+    display: grid;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    border: none;
+}
+
+.item-formCart {
+    box-shadow: 0 0 8px 0 black;
+    width: 100%;
+    position: relative;
+    display: grid;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.item-formCart #close-form {
+    position: absolute;
+    padding: 10px;
+    font-size: 1.5rem;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: red;
+}
+
+.item-formCart h2 {
+    text-align: center;
+    display: grid;
+    position: relative;
+    border: none;
+}
+
+.item-formCart .box-button-close-catatan {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.box-button-close-catatan button {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    align-items: center;
+    background-color: #ffa600;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: none;
+    transition: .3s ease;
+}
+
+.box-button-close-catatan button:hover {
+    background-color: #774d00;
+}
+
+.box-textarea {
+    display: grid;
+    width: 100%;
+    position: relative;
+    border: none;
+    gap: 10px;
+}
+
+.catatan-pesanan {
+    border: 2px solid black;
+    border-radius: 10px;
+    display: none;
+    width: 100%;
+    color: black;
+    position: relative;
+    background-color: white;
+    text-align: left;
+    font-size: 1rem;
+    scrollbar-width: none;
+    resize: none;
+    padding: 5px;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+
+.catatan-pesanan.bukac {
+    display: grid;
+    animation-name: show-catatan;
+}
+
+@keyframes show-catatan {
+   0%{
+    opacity: 0;
+    transform: translateY(-20px);
+   }
+
+   100%{
+    opacity: 1;
+    transform: translateY(0);
+   }
+}
+
+.data-pesanan {
+    border: none;
+    border-bottom: 2px solid black;
+    display: none;
+    background-color: white;
+    text-align: left;
+    color: black;
+    font-size: 1rem;
+    padding: 5px;
+    scrollbar-width: none;
+    resize: none;
+    width: 100%;
+}
+
+#list-pesanan{
+    list-style: decimal;
+    text-decoration: none;
+    background-color: white;
+    width: 100%;
+    display: grid;
+    border: none;
+    color: black;
+    position: relative;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+
+.label-total-harga {
+    display: flex;
+    width: 100%;
+    position: relative;
+    border: none;
+    background-color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 5px;
+}
+
+.box-nomer-nama-alamat {
+    background: transparent;
+    width: 100%;
+    padding: 5px;
+    display: grid;
+    gap: 10px;
+    position: relative;
+    border: none;
+}
+
+.box-nomer-nama-alamat .nomer-wa,
+.nama-anda,
+.alamat-rumah {
+    display: grid;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    border: none;
+    color: black;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: .6s ease;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.nomer-wa:hover,
+.nama-anda:hover,
+.alamat-rumah:hover {
+    background-color: #7979797e;
+    border-radius: 10px;
+}
+
+.box-nomer-nama-alamat input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.nomer-wa::placeholder,
+.nama-anda::placeholder,
+.alamat-rumah::placeholder {
+    color: rgb(87, 87, 87);
+    display: grid;
+    width: 100%;
+    position: relative;
+    border: none;
+    transition: .6s ease;
+}
+
+.nomer-wa:hover::placeholder,
+.nama-anda:hover::placeholder,
+.alamat-rumah:hover::placeholder {
+    transform: translateX(10px);
+    color: black;
+}
+
+.item-formCart .button-kirim {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    display: grid;
+    background-color: #ffa600;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    transition: .6s ease;
+}
+
+.button-kirim:hover {
+    background-color: #a86d00;
+}

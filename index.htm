@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="image/logo icon.jpg">
+    <title>fast food</title>
+</head>
+
+<body>
+    <header class="header-to-bottom">
+        <nav class="nav-content">
+            <button id="buttonCartShopping" class="fa-solid fa-cart-shopping" onclick="openKeranjang()">
+                <span id="cart-notification">0</span>
+            </button>
+            <a href="#" class="fa-solid fa-home"></a>
+            <a href="#drink" class="fa-solid fa-glass-water"></a>
+            <a href="#food" class="fa-solid fa-burger"></a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <div class="judul-home">
+                <h2>fast food</h2>
+            </div>
+
+            <div class="text-home">
+                <h2>selamat datang di fast food online</h2>
+
+                <p>
+                    Nikmati kemudahan memesan makanan dan minuman favorit Anda secara online! Dari burger lezat hingga
+                    minuman segar, kami siap mengantarkan ke rumah Anda.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="drink">
+        <div class="menu-content">
+
+            <div class="box-menu">
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.5</p>
+                    </h3>
+                    <img src="image/boba.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>boba milk</h2>
+                        <div class="box-harga-add">
+                            <p>rp 16.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('boba milk', 16000, 'image/boba.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.0</p>
+                    </h3>
+                    <img src="image/jus jambu.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>jus jambu</h2>
+                        <div class="box-harga-add">
+                            <p>rp 10.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('jus jambu', 10000, 'image/jus jambu.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.7</p>
+                    </h3>
+                    <img src="image/es buah.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>es buah</h2>
+                        <div class="box-harga-add">
+                            <p>rp 12.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('es buah', 12000, 'image/es buah.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.5</p>
+                    </h3>
+                    <img src="image/es teler.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>es teler</h2>
+                        <div class="box-harga-add">
+                            <p>rp 20.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('es teler', 20000, 'image/es teler.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>5.3</p>
+                    </h3>
+                    <img src="image/eskrim kelapa.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>eskrim kelapa</h2>
+                        <div class="box-harga-add">
+                            <p>rp 25.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('eskrim kelapa', 25000, 'image/eskrim kelapa.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="menu" id="food">
+        <div class="menu-content">
+
+            <div class="box-menu">
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.5</p>
+                    </h3>
+                    <img src="image/boba.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>boba milk</h2>
+                        <div class="box-harga-add">
+                            <p>rp 16.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('boba milk', 16000, 'image/boba.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.0</p>
+                    </h3>
+                    <img src="image/jus jambu.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>jus jambu</h2>
+                        <div class="box-harga-add">
+                            <p>rp 10.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('jus jambu', 10000, 'image/jus jambu.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.7</p>
+                    </h3>
+                    <img src="image/es buah.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>es buah</h2>
+                        <div class="box-harga-add">
+                            <p>rp 12.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('es buah', 12000, 'image/es buah.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>4.5</p>
+                    </h3>
+                    <img src="image/es teler.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>es teler</h2>
+                        <div class="box-harga-add">
+                            <p>rp 20.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('es teler', 20000, 'image/es teler.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <h3 class="fa-solid fa-star">
+                        <p>5.3</p>
+                    </h3>
+                    <img src="image/eskrim kelapa.jpg" alt="">
+                    <div class="text-menu">
+                        <h2>eskrim kelapa</h2>
+                        <div class="box-harga-add">
+                            <p>rp 25.000</p>
+                            <button class="fa-solid fa-cart-plus" id="add-to-cart"
+                                onclick="showConfirmation('eskrim kelapa', 25000, 'image/eskrim kelapa.jpg')"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="showconfirmation">
+        <div class="showcontent">
+
+            <div class="box-show">
+                <button class="fa-solid fa-xmark" id="close" onclick="closeConfirmation()"></button>
+
+                <h2>konfirmasi pesanan</h2>
+                <div class="box-input-confirmation">
+                    <input type="image" src="" alt="pesananImg" id="foto-pesanan">
+                    <div class="container-nama-harga">
+                        <input type="text" class="InputnamaPesanan" readonly>
+
+                        <div class="box-label-harga">
+                            <h2 class="labelHarga">harga: </h2>
+                            <input type="number" class="InputhargaPesanan" readonly name="" id="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-ukuran">
+                    <h2>ukuran :</h2>
+                    <div class="item-ukuran">
+                        <button class="btukuran" onclick="itemUkuran('anda memilih : kecil')">kecil</button>
+                        <button class="btukuran" onclick="itemUkuran('anda memilih : sedang')">sedang</button>
+                        <button class="btukuran" onclick="itemUkuran('anda memilih : besar')">besar</button>
+                    </div>
+                    <input class="textUkuran" type="text" placeholder="anda memilih :" id="pemiliHanukuran" readonly>
+                </div>
+
+                <h2>jumlah dipesan :</h2>
+                <div class="jumlah-dipesan">
+                    <button onclick="kurangAngka()">-</button>
+                    <p id="angka">0</p>
+                    <button onclick="tambahAngka()">+</button>
+                </div>
+
+                <div class="box-totalharga">
+                    <h2>total harga:</h2>
+                    <input type="number" name="" id="totalHargaInput" class="total-harga" readonly>
+                </div>
+
+                <div class="button-to-cart">
+                    <button type="reset" class="btreset">reset</button>
+                    <button type="button" class="+to-cart" onclick="tambahPesananKeDataPesanan()">+ to cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-cart">
+        <div class="content-form-cart">
+            <form action="" class="item-formCart">
+
+                <button class="fa-solid fa-xmark" id="close-form" onclick="closeForm(event)"></button>
+                <h2>daftar pesanan</h2>
+                <div class="box-button-close-catatan">
+                    <button type="button" class="fa-solid fa-trash" onclick="removeAll()"></button>
+                    <button type="button" class="fa-solid fa-comment" onclick="buttonCatatan()"></button>
+                </div>
+
+                <div class="box-textarea">
+                    <textarea name="" class="catatan-pesanan" id="catatanPesanan" cols="40" rows="3"
+                        placeholder="ada yang mau ditambahkan?"></textarea>
+                    <ul id="list-pesanan"></ul>
+                    <textarea name="" class="data-pesanan" id="dataPesanan" cols="40" rows="6" readonly
+                        required></textarea>
+                </div>
+
+                <label for="" class="label-total-harga">
+                    totalsemua harga: <span id="semua-total-harga">0</span>
+                </label>
+
+                <div class="box-nomer-nama-alamat">
+                    <input type="number" name="" id="nomerWa" class="nomer-wa" placeholder="masukan nomer wa" required>
+                    <input type="text" name="" id="namaAnda" class="nama-anda" placeholder="masukan nama anda" required>
+                    <input type="text" id="Alamat" class="alamat-rumah" placeholder="alamat lengkap" required>
+                </div>
+
+                <button type="submit" class="button-kirim">
+                    kirim
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- untuk refresh loaded body -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("loaded");
+        })
+    </script>
+
+    <!-- untuk membuka catatan -->
+    <script>
+        function buttonCatatan() {
+            const bukaCatatan = document.getElementById('catatanPesanan');
+            bukaCatatan.classList.toggle('bukac');
+        }
+    </script>
+
+    <!-- untuk membuka keranjang -->
+    <script>
+        function openKeranjang() {
+            const bukaKeranjang = document.querySelector('.form-cart');
+            bukaKeranjang.classList.add('bukaf');
+        }
+
+        function closeForm(event) {
+            event.preventDefault();
+            const tutupKeranjang = document.querySelector('.form-cart');
+            tutupKeranjang.classList.remove('bukaf');
+        }
+    </script>
+
+    <!-- pemilihan ukuran -->
+    <script>
+        function itemUkuran(btukuran) {
+            const pemilihanUkuran = document.getElementById("pemiliHanukuran");
+            pemilihanUkuran.value = btukuran;
+        }
+    </script>
+
+    <!-- membuka konfirmasi pesanan dan fungsi button reset-->
+    <script>
+        function showConfirmation(nama, harga, imgSrc) {
+            const bukaKonfirmasi = document.querySelector('.showconfirmation');
+            const namaPesananInput = bukaKonfirmasi.querySelector('.InputnamaPesanan');
+            const hargaPesananInput = bukaKonfirmasi.querySelector('.InputhargaPesanan');
+            const fotoPesanan = bukaKonfirmasi.querySelector('#foto-pesanan');
+
+            document.getElementById("pemiliHanukuran").value = "";
+
+            count = 0;
+            document.getElementById("angka").textContent = count;
+            document.getElementById("totalHargaInput").value = count;
+
+            namaPesananInput.value = nama;
+            hargaPesananInput.value = harga;
+            fotoPesanan.src = imgSrc;
+            bukaKonfirmasi.classList.add('buka');
+        }
+
+        function closeConfirmation() {
+            const tutupKonfirmasi = document.querySelector('.showconfirmation');
+            tutupKonfirmasi.classList.remove('buka');
+        }
+
+        document.querySelector('.btreset').addEventListener('click', function () {
+            document.getElementById("pemiliHanukuran").value = "";
+
+            count = 0;
+            document.getElementById("angka").textContent = count;
+            document.getElementById("totalHargaInput").value = count;
+        });
+    </script>
+
+    <!-- jumlah pesanan + dan -. -->
+    <script>
+        let count = 0;
+        const numberElement = document.getElementById("angka");
+
+        function tambahAngka() {
+            count += 1;
+            numberElement.textContent = count;
+            updateTotalHarga();
+        }
+
+        function kurangAngka() {
+            if (count > 0) {
+                count -= 1;
+                numberElement.textContent = count;
+                updateTotalHarga();
+            }
+        }
+    </script>
+
+    <!-- untuk total harga -->
+    <script>
+        function tambahAngka() {
+            count += 1;
+            numberElement.textContent = count;
+            updateTotalHarga();
+        }
+
+        function kurangAngka() {
+            if (count > 0) {
+                count -= 1;
+                numberElement.textContent = count;
+                updateTotalHarga();
+            }
+        }
+
+        function updateTotalHarga() {
+            const hargaPerItem = parseFloat(document.querySelector('.InputhargaPesanan').value);
+            const jumlahPesanan = count;
+            const totalHarga = hargaPerItem * jumlahPesanan;
+            document.getElementById("totalHargaInput").value = totalHarga;
+        }
+
+    </script>
+
+    <!-- data konfirmasi pindah ke form cart -->
+    <script>
+        let cartCount = 0;
+
+        function tambahPesananKeDataPesanan() {
+            const namaPesanan = document.querySelector('.InputnamaPesanan').value;
+            const hargaPesanan = document.querySelector('.InputhargaPesanan').value;
+            const ukuranPesanan = document.getElementById("pemiliHanukuran").value;
+            const jumlahPesanan = document.getElementById("angka").textContent;
+            const totalHargaPesanan = document.getElementById("totalHargaInput").value;
+            const dataPesananTextarea = document.getElementById("dataPesanan");
+            const pesananBaru = `${namaPesanan} (${ukuranPesanan}), Jumlah: ${jumlahPesanan}, Total Harga: ${totalHargaPesanan}\n\n`;
+
+            tambahNotifikasiKeList(namaPesanan, ukuranPesanan, jumlahPesanan, totalHargaPesanan);
+            tambahNotifikasiKeranjang();
+            dataPesananTextarea.value += pesananBaru;
+
+            closeConfirmation();
+        }
+
+        function tambahNotifikasiKeList(namaPesanan, ukuranPesanan, jumlahPesanan, totalHargaPesanan) {
+            const listPesanan = document.getElementById("list-pesanan");
+            const liElement = document.createElement("li");
+            const pesananText = `${namaPesanan} (${ukuranPesanan}), Jumlah: ${jumlahPesanan}, Total Harga: ${totalHargaPesanan}`;
+            liElement.textContent = pesananText;
+
+            const buttonHapus = document.createElement("button");
+            buttonHapus.classList = "fa-solid fa-xmark";
+            buttonHapus.addEventListener("click", function () {
+                hapusPesanan(liElement, pesananText);
+            });
+
+            buttonHapus.style.backgroundColor = "red";
+            buttonHapus.style.border = "none";
+            buttonHapus.style.width = "30px";
+            buttonHapus.style.height = "30px";
+            buttonHapus.style.color = "white";
+            buttonHapus.style.position = "relative";
+            buttonHapus.style.fontSize = "1rem";
+            buttonHapus.style.textAlign = "center";
+            buttonHapus.style.borderRadius = "50%";
+            buttonHapus.style.display = "flex";
+            buttonHapus.style.justifyContent = "center";
+            buttonHapus.style.alignItems = "center";
+
+            liElement.appendChild(buttonHapus);
+            listPesanan.appendChild(liElement);
+        }
+
+        function hapusPesanan(liElement, pesananText) {
+            const listPesanan = document.getElementById("list-pesanan");
+            const dataPesananTextarea = document.getElementById("dataPesanan");
+
+            listPesanan.removeChild(liElement);
+            dataPesananTextarea.value = dataPesananTextarea.value.replace(`${pesananText}\n\n`, "");
+
+            cartCount--;
+            const NotifikasiKeranjang = document.getElementById('cart-notification');
+            NotifikasiKeranjang.textContent = cartCount;
+        }
+
+        function tambahNotifikasiKeranjang() {
+            cartCount++;
+            const NotifikasiKeranjang = document.getElementById('cart-notification');
+            NotifikasiKeranjang.textContent = cartCount;
+        }
+
+        function removeAll() {
+            const dataPesananTextarea = document.getElementById("dataPesanan");
+            dataPesananTextarea.value = "";
+            cartCount = 0;
+            const cartNotification = document.getElementById('cart-notification');
+            cartNotification.textContent = cartCount;
+
+            const listPesanan = document.getElementById('list-pesanan');
+            while (listPesanan.firstChild) {
+                listPesanan.removeChild(listPesanan.firstChild);
+            }
+        }
+    </script>
+
+</body>
+
+</html> 
