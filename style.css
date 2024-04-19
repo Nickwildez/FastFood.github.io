@@ -380,7 +380,7 @@ body.loaded {
 
 .showcontent{
     display: grid;
-    align-items: center;
+    
     padding: 10px;
     width: 100%;
     position: relative;
