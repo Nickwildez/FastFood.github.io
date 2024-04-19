@@ -164,6 +164,7 @@ body.loaded {
     align-items: center;
     border: none;
     padding: 20px;
+    width: 100%;
 }
 
 .judul-home h2 {
@@ -227,15 +228,17 @@ body.loaded {
 .menu-content {
     width: 100%;
     display: grid;
+    justify-content: center;
     position: relative;
     border-radius: 15px;
-    gap: 40px;
+    gap: 30px;
     text-align: center;
 }
 
 .box-menu {
     display: grid;
     position: relative;
+    justify-content: center;
     padding: 5px;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -298,7 +301,6 @@ body.loaded {
 
 .text-menu h2 {
     text-align: left;
-    left: 10px;
     position: relative;
     display: inline-block;
     font-weight: 600;
@@ -344,8 +346,8 @@ body.loaded {
     display: none;
     width: 100%;
     position: fixed;
-    top: 0;
     left: 0;
+    top: 0;
     min-height: 100vh;
     border: none;
     align-items: center;
@@ -353,6 +355,7 @@ body.loaded {
     z-index: 10000;
     background-size: cover;
     background-position: center;
+    background-color: transparent;
     background-repeat: no-repeat;
     animation-duration: .5s;
     animation-fill-mode: forwards;
@@ -375,27 +378,25 @@ body.loaded {
     }
 }
 
-.showcontent {
+.showcontent{
     display: grid;
-    justify-content: center;
+    align-items: center;
+    padding: 10px;
     width: 100%;
     position: relative;
     border: none;
-    padding: 20px;
 }
 
-.box-show {
+.box-show{
     width: 100%;
-    box-shadow: 0 0 10px 1px black;
-    border: none;
-    text-align: left;
-    background-color: #ffffff;
-    border-radius: 10px;
     display: grid;
     justify-content: center;
-    padding: 10px;
     position: relative;
-    gap: 5px;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 0 10px 1px black;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .box-show #close {
@@ -405,8 +406,8 @@ body.loaded {
     z-index: 10;
     right: 0;
     top: 0;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     text-align: center;
     display: flex;
@@ -454,14 +455,16 @@ body.loaded {
 }
 
 .container-nama-harga .InputnamaPesanan {
-    width: 100%;
     display: grid;
-    position: relative;
+    position: absolute;
     border: none;
     background: transparent;
+    text-shadow: 5px 5px 4px black;
     text-align: left;
+    color: #ffffff;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: bold;
+    transform: translateY(-40px);
 }
 
 .box-label-harga {
