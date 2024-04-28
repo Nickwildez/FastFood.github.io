@@ -331,6 +331,7 @@ body.loaded {
     text-align: center;
     display: grid;
     cursor: pointer;
+    color: black;
     border: none;
     border-radius: 10px;
     padding: 10px;
@@ -345,19 +346,13 @@ body.loaded {
 .showconfirmation {
     display: none;
     width: 100%;
+    height: 100%;
     position: fixed;
-    left: 0;
     top: 0;
-    min-height: 100vh;
-    padding: 30px;
     border: none;
     align-items: center;
-    justify-content: center;
+    min-height: 100vh;
     z-index: 10000;
-    background-size: cover;
-    background-position: center;
-    background-color: transparent;
-    background-repeat: no-repeat;
     animation-duration: .5s;
     animation-fill-mode: forwards;
 }
@@ -365,32 +360,31 @@ body.loaded {
 .showconfirmation.buka {
     display: grid;
     animation-name: fadeUpConfirmation;
+    background-color: #00000091;
 }
 
-@keyframes fadeUpConfirmation{
-    0%{
+@keyframes fadeUpConfirmation {
+    0% {
         opacity: 0;
         transform: translateY(100%);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.showcontent{
+.showcontent {
     display: grid;
-    padding: 10px;
     width: 100%;
     position: relative;
     border: none;
 }
 
-.box-show{
+.box-show {
     width: 100%;
     display: grid;
-    justify-content: center;
     position: relative;
     background-color: #ffffff;
     border: none;
@@ -439,7 +433,6 @@ body.loaded {
     max-height: 20vh;
     border: none;
     display: grid;
-    justify-content: center;
     border-radius: 10px;
     background-position: center;
     background-size: cover;
@@ -450,57 +443,41 @@ body.loaded {
 .container-nama-harga {
     display: grid;
     position: relative;
-    width: 100%;
     border: none;
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
 }
 
 .container-nama-harga .InputnamaPesanan {
-    display: grid;
-    position: absolute;
     border: none;
-    background: transparent;
-    text-shadow: 5px 5px 4px black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    position: absolute;
     text-align: left;
-    color: #ffffff;
+    top: -40px;
+    background-color: transparent;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    width: 100%;
+}
+
+.container-nama-harga .InputhargaPesanan {
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    background-color: transparent;
+    color: black;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.box-ukuran h2 {
     font-size: 1.5rem;
     font-weight: bold;
-    transform: translateY(-40px);
-}
-
-.box-label-harga {
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-    align-items: center;
-    width: 100%;
-    border: none;
-    text-align: left;
-    background: transparent;
-}
-
-.box-label-harga .labelHarga {
-    display: grid;
-    font-weight: 600;
-    position: relative;
-    border: none;
-}
-
-.box-label-harga .InputhargaPesanan {
-    width: 100%;
-    position: relative;
-    display: grid;
-    text-align: left;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-    background-color: transparent;
-    border-radius: 10px;
-    color: black;
-}
-
-.box-ukuran p {
-    font-size: 1.5rem;
-    font-weight: 500;
     position: relative;
     display: block;
 }
@@ -535,11 +512,13 @@ body.loaded {
 
 .textUkuran {
     border: none;
-    border-radius: 10px;
-    background: transparent;
-    font-size: 1.2rem;
+    display: block;
+    background-color: transparent;
+    color: black;
     position: relative;
-    font-weight: 500;
+    font-size: 1.3rem;
+    width: 100%;
+    font-weight: 600;
 }
 
 .textUkuran::placeholder {
@@ -547,13 +526,15 @@ body.loaded {
     position: relative;
 }
 
-.box-show .jumlah-dipesan {
+.jumlah-dipesan {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    border: none;
     gap: 30px;
-    width: 100%;
     position: relative;
+    background-color: transparent;
 }
 
 .jumlah-dipesan button {
@@ -580,14 +561,14 @@ body.loaded {
 }
 
 .box-totalharga {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
-    position: relative;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    border: none;
+    background: transparent;
 }
 
-.box-totalharga h2{
+.box-totalharga h2 {
     width: 100%;
     position: relative;
     display: grid;
@@ -609,7 +590,10 @@ body.loaded {
 }
 
 .button-to-cart {
+    border: none;
+    background-color: transparent;
     width: 100%;
+    gap: 10px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -618,6 +602,7 @@ body.loaded {
 
 .button-to-cart button {
     padding: 10px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -641,17 +626,18 @@ body.loaded {
     top: 0;
     min-height: 100vh;
     align-items: center;
+    justify-content: center;
     overflow-y: auto;
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    background-color: #000000a8;
     border: none;
     z-index: 10000;
     animation-duration: .5s;
     animation-fill-mode: forwards;
 }
 
-.form-cart::-webkit-scrollbar{
+.form-cart::-webkit-scrollbar {
     display: none;
 }
 
@@ -689,6 +675,7 @@ body.loaded {
     background-color: white;
     border: none;
     border-radius: 10px;
+    gap: 10px;
 }
 
 .item-formCart #close-form {
@@ -781,21 +768,21 @@ body.loaded {
 }
 
 @keyframes show-catatan {
-   0%{
-    opacity: 0;
-    transform: translateY(-20px);
-   }
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 
-   100%{
-    opacity: 1;
-    transform: translateY(0);
-   }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .data-pesanan {
     border: none;
     border-bottom: 2px solid black;
-    display: none;
+    display: grid;
     background-color: white;
     text-align: left;
     color: black;
@@ -806,7 +793,7 @@ body.loaded {
     width: 100%;
 }
 
-#list-pesanan{
+#list-pesanan {
     list-style: decimal;
     text-decoration: none;
     background-color: white;
@@ -820,15 +807,35 @@ body.loaded {
     border-bottom: 3px solid black;
 }
 
-.label-total-harga {
+.box-total-semua-harga {
     display: flex;
     width: 100%;
     position: relative;
-    border: none;
+    border: 2px solid #494949;
+    border-radius: 10px;
     background-color: white;
     font-size: 1.2rem;
     font-weight: 500;
     gap: 5px;
+}
+
+.box-total-semua-harga h2{
+    font-size: 1.2rem;
+    color: black;
+    display: flex;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+#semua-total-harga{
+    border: none;
+    display: flex;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    text-align: left;
 }
 
 .box-nomer-nama-alamat {
@@ -836,7 +843,7 @@ body.loaded {
     width: 100%;
     padding: 5px;
     display: grid;
-    gap: 10px;
+    gap: 20px;
     position: relative;
     border: none;
 }
@@ -893,8 +900,10 @@ body.loaded {
     border: none;
     border-radius: 10px;
     display: grid;
+    text-align: center;
+    color: white;
     background-color: #ffa600;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     padding: 10px;
@@ -903,4 +912,103 @@ body.loaded {
 
 .button-kirim:hover {
     background-color: #a86d00;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    min-height: 100vh;
+    background-color: #000000a8;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    z-index: 10000;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.content-popup{
+    display: grid;
+    position: relative;
+    width: 100%;
+    border: none;
+}
+
+.box-popup{
+    display: grid;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+    min-height: 28vh;
+    position: relative;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box-centang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: -60px;
+}
+
+.box-popup span{
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    border: 7px solid white;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #ffa600;
+}
+
+.box-text-popup{
+    display: grid;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    border: none;
+}
+
+.box-text-popup p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.box-text-popup .back-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: #ffd900;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    padding: 5px;
+    font-size: 1.5rem;
 }

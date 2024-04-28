@@ -224,11 +224,7 @@
                     <input type="image" src="" alt="pesananImg" id="foto-pesanan">
                     <div class="container-nama-harga">
                         <input type="text" class="InputnamaPesanan" readonly>
-
-                        <div class="box-label-harga">
-                            <h2 class="labelHarga">harga: </h2>
-                            <input type="number" class="InputhargaPesanan" readonly name="" id="">
-                        </div>
+                        <input type="number" class="InputhargaPesanan" readonly name="" id="">
                     </div>
                 </div>
 
@@ -269,7 +265,7 @@
                 <button class="fa-solid fa-xmark" id="close-form" onclick="closeForm(event)"></button>
                 <h2>daftar pesanan</h2>
                 <div class="box-button-close-catatan">
-                    <button type="button" class="fa-solid fa-trash" onclick="removeAll()"></button>
+                    <button type="reset" class="fa-solid fa-trash" onclick="removeAll()"></button>
                     <button type="button" class="fa-solid fa-comment" onclick="buttonCatatan()"></button>
                 </div>
 
@@ -281,9 +277,10 @@
                         required></textarea>
                 </div>
 
-                <label for="" class="label-total-harga">
-                    total semua harga: <span id="semua-total-harga">0</span>
-                </label>
+                <div class="box-total-semua-harga">
+                    <h2>total semua harga: </h2>
+                    <input type="text" name="" id="semua-total-harga" readonly>
+                </div>
 
                 <div class="box-nomer-nama-alamat">
                     <input type="number" name="" id="nomerWa" class="nomer-wa" placeholder="masukan nomer wa" required>
@@ -298,203 +295,25 @@
         </div>
     </section>
 
-    <!-- untuk refresh loaded body -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.classList.add("loaded");
-        })
-    </script>
+    <section class="popup" id="Popup">
+        <div class="content-popup">
+            <div class="box-popup">
+                <div class="box-centang">
+                    <span class="fa-solid fa-check"></span>
+                </div>
+                <br>
 
-    <!-- untuk membuka catatan -->
-    <script>
-        function buttonCatatan() {
-            const bukaCatatan = document.getElementById('catatanPesanan');
-            bukaCatatan.classList.toggle('bukac');
-        }
-    </script>
+                <div class="box-text-popup">
+                    <p>pesanan sudah terkirim, terima kasih sudah memesan
+                        <i class="fa-regular fa-face-smile-wink"></i>
+                    </p>
+                    <button type="submit" class="back-home">kembali</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- untuk membuka keranjang -->
-    <script>
-        function openKeranjang() {
-            const bukaKeranjang = document.querySelector('.form-cart');
-            bukaKeranjang.classList.add('bukaf');
-        }
-
-        function closeForm(event) {
-            event.preventDefault();
-            const tutupKeranjang = document.querySelector('.form-cart');
-            tutupKeranjang.classList.remove('bukaf');
-        }
-    </script>
-
-    <!-- pemilihan ukuran -->
-    <script>
-        function itemUkuran(btukuran) {
-            const pemilihanUkuran = document.getElementById("pemiliHanukuran");
-            pemilihanUkuran.value = btukuran;
-        }
-    </script>
-
-    <!-- membuka konfirmasi pesanan dan fungsi button reset-->
-    <script>
-        function showConfirmation(nama, harga, imgSrc) {
-            const bukaKonfirmasi = document.querySelector('.showconfirmation');
-            const namaPesananInput = bukaKonfirmasi.querySelector('.InputnamaPesanan');
-            const hargaPesananInput = bukaKonfirmasi.querySelector('.InputhargaPesanan');
-            const fotoPesanan = bukaKonfirmasi.querySelector('#foto-pesanan');
-
-            document.getElementById("pemiliHanukuran").value = "";
-
-            count = 0;
-            document.getElementById("angka").textContent = count;
-            document.getElementById("totalHargaInput").value = count;
-
-            namaPesananInput.value = nama;
-            hargaPesananInput.value = harga;
-            fotoPesanan.src = imgSrc;
-            bukaKonfirmasi.classList.add('buka');
-        }
-
-        function closeConfirmation() {
-            const tutupKonfirmasi = document.querySelector('.showconfirmation');
-            tutupKonfirmasi.classList.remove('buka');
-        }
-
-        document.querySelector('.btreset').addEventListener('click', function () {
-            document.getElementById("pemiliHanukuran").value = "";
-
-            count = 0;
-            document.getElementById("angka").textContent = count;
-            document.getElementById("totalHargaInput").value = count;
-        });
-    </script>
-
-    <!-- jumlah pesanan + dan -. -->
-    <script>
-        let count = 0;
-        const numberElement = document.getElementById("angka");
-
-        function tambahAngka() {
-            count += 1;
-            numberElement.textContent = count;
-            updateTotalHarga();
-        }
-
-        function kurangAngka() {
-            if (count > 0) {
-                count -= 1;
-                numberElement.textContent = count;
-                updateTotalHarga();
-            }
-        }
-    </script>
-
-    <!-- untuk total harga -->
-    <script>
-        function tambahAngka() {
-            count += 1;
-            numberElement.textContent = count;
-            updateTotalHarga();
-        }
-
-        function kurangAngka() {
-            if (count > 0) {
-                count -= 1;
-                numberElement.textContent = count;
-                updateTotalHarga();
-            }
-        }
-
-        function updateTotalHarga() {
-            const hargaPerItem = parseFloat(document.querySelector('.InputhargaPesanan').value);
-            const jumlahPesanan = count;
-            const totalHarga = hargaPerItem * jumlahPesanan;
-            document.getElementById("totalHargaInput").value = totalHarga;
-        }
-
-    </script>
-
-    <!-- data konfirmasi pindah ke form cart -->
-    <script>
-        let cartCount = 0;
-
-        function tambahPesananKeDataPesanan() {
-            const namaPesanan = document.querySelector('.InputnamaPesanan').value;
-            const hargaPesanan = document.querySelector('.InputhargaPesanan').value;
-            const ukuranPesanan = document.getElementById("pemiliHanukuran").value;
-            const jumlahPesanan = document.getElementById("angka").textContent;
-            const totalHargaPesanan = document.getElementById("totalHargaInput").value;
-            const dataPesananTextarea = document.getElementById("dataPesanan");
-            const pesananBaru = `${namaPesanan} (${ukuranPesanan}), Jumlah: ${jumlahPesanan}, Total Harga: ${totalHargaPesanan}\n\n`;
-
-            tambahNotifikasiKeList(namaPesanan, ukuranPesanan, jumlahPesanan, totalHargaPesanan);
-            tambahNotifikasiKeranjang();
-            dataPesananTextarea.value += pesananBaru;
-
-            closeConfirmation();
-        }
-
-        function tambahNotifikasiKeList(namaPesanan, ukuranPesanan, jumlahPesanan, totalHargaPesanan) {
-            const listPesanan = document.getElementById("list-pesanan");
-            const liElement = document.createElement("li");
-            const pesananText = `${namaPesanan} (${ukuranPesanan}), Jumlah: ${jumlahPesanan}, Total Harga: ${totalHargaPesanan}`;
-            liElement.textContent = pesananText;
-
-            const buttonHapus = document.createElement("button");
-            buttonHapus.classList = "fa-solid fa-xmark";
-            buttonHapus.addEventListener("click", function () {
-                hapusPesanan(liElement, pesananText);
-            });
-
-            buttonHapus.style.backgroundColor = "red";
-            buttonHapus.style.border = "none";
-            buttonHapus.style.width = "30px";
-            buttonHapus.style.height = "30px";
-            buttonHapus.style.color = "white";
-            buttonHapus.style.position = "relative";
-            buttonHapus.style.fontSize = "1rem";
-            buttonHapus.style.textAlign = "center";
-            buttonHapus.style.borderRadius = "50%";
-            buttonHapus.style.display = "flex";
-            buttonHapus.style.justifyContent = "center";
-            buttonHapus.style.alignItems = "center";
-
-            liElement.appendChild(buttonHapus);
-            listPesanan.appendChild(liElement);
-        }
-
-        function hapusPesanan(liElement, pesananText) {
-            const listPesanan = document.getElementById("list-pesanan");
-            const dataPesananTextarea = document.getElementById("dataPesanan");
-
-            listPesanan.removeChild(liElement);
-            dataPesananTextarea.value = dataPesananTextarea.value.replace(`${pesananText}\n\n`, "");
-
-            cartCount--;
-            const NotifikasiKeranjang = document.getElementById('cart-notification');
-            NotifikasiKeranjang.textContent = cartCount;
-        }
-
-        function tambahNotifikasiKeranjang() {
-            cartCount++;
-            const NotifikasiKeranjang = document.getElementById('cart-notification');
-            NotifikasiKeranjang.textContent = cartCount;
-        }
-
-        function removeAll() {
-            const dataPesananTextarea = document.getElementById("dataPesanan");
-            dataPesananTextarea.value = "";
-            cartCount = 0;
-            const cartNotification = document.getElementById('cart-notification');
-            cartNotification.textContent = cartCount;
-
-            const listPesanan = document.getElementById('list-pesanan');
-            while (listPesanan.firstChild) {
-                listPesanan.removeChild(listPesanan.firstChild);
-            }
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
-</html> 
+</html>
