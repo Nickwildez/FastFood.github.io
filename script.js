@@ -114,7 +114,7 @@ function tambahPesananKeDataPesanan() {
     listPesanan.appendChild(newItem);
 
     const dataPesananTextarea = document.getElementById("dataPesanan");
-    dataPesananTextarea.value += `${namaPesanan} (${ukuranPesanan}) x ${jumlahPesanan}\n`;
+    dataPesananTextarea.value += `${namaPesanan} (${ukuranPesanan}) x ${jumlahPesanan} = Rp ${totalHarga}\n`;
 
     updateTotalSemuaHarga();
 
@@ -171,8 +171,9 @@ function updateTotalSemuaHarga() {
         const harga = parseInt(item.textContent.split("=")[1].trim().substring(3));
         totalSemuaHarga += harga;
     });
-
-    document.getElementById("semua-total-harga").value = totalSemuaHarga;
+    
+    const formatteTotal = "Rp." + totalSemuaHarga.toLocaleString();
+    document.getElementById("semua-total-harga").value = formatteTotal;
 }
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbznLV46vcaHFz_odo7vfrZt_SbggTrfRHwesOQ9ZilLUDYfabPp4J48oZBA-x9W67B1AQ/exec'

@@ -782,7 +782,7 @@ body.loaded {
 .data-pesanan {
     border: none;
     border-bottom: 2px solid black;
-    display: grid;
+    display: none;
     background-color: white;
     text-align: left;
     color: black;
@@ -836,6 +836,8 @@ body.loaded {
     position: relative;
     background: transparent;
     text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .box-nomer-nama-alamat {
