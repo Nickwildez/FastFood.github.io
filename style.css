@@ -819,7 +819,7 @@ body.loaded {
     gap: 5px;
 }
 
-.box-total-semua-harga h2{
+.box-total-semua-harga h2 {
     font-size: 1.2rem;
     color: black;
     display: flex;
@@ -829,7 +829,7 @@ body.loaded {
     width: 100%;
 }
 
-#semua-total-harga{
+#semua-total-harga {
     border: none;
     display: flex;
     width: 100%;
@@ -922,6 +922,7 @@ body.loaded {
     background-color: #000000a8;
     width: 100%;
     height: 100%;
+    text-align: center;
     overflow-y: auto;
     padding: 10px;
     z-index: 10000;
@@ -932,14 +933,14 @@ body.loaded {
     animation-fill-mode: forwards;
 }
 
-.content-popup{
+.content-popup {
     display: grid;
     position: relative;
     width: 100%;
     border: none;
 }
 
-.box-popup{
+.box-popup {
     display: grid;
     align-items: end;
     width: 100%;
@@ -952,17 +953,17 @@ body.loaded {
     text-align: center;
 }
 
-.box-centang{
+.box-centang {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     position: absolute;
     width: 100%;
     top: -60px;
 }
 
-.box-popup span{
-    text-align: center;
+.box-popup span {
     position: relative;
     display: flex;
     justify-content: center;
@@ -977,7 +978,7 @@ body.loaded {
     background-color: #ffa600;
 }
 
-.box-text-popup{
+.box-text-popup {
     display: grid;
     width: 100%;
     position: relative;
@@ -985,7 +986,7 @@ body.loaded {
     border: none;
 }
 
-.box-text-popup p{
+.box-text-popup p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -997,10 +998,11 @@ body.loaded {
     margin-bottom: 10px;
 }
 
-.box-text-popup .back-home{
+.box-text-popup .back-home {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
     text-align: center;
     background-color: #ffd900;
@@ -1009,6 +1011,80 @@ body.loaded {
     border-radius: 10px;
     border: none;
     position: relative;
-    padding: 5px;
+    padding: 10px;
     font-size: 1.5rem;
+}
+
+.box-text-popup .back-home:hover,
+.box-text-popup .back-home:focus {
+    background-color: #a86d00;
+}
+
+.alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    border: none;
+    z-index: 100000;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000a8;
+    padding: 10px;
+}
+
+.content-alert {
+    display: grid;
+    position: relative;
+    width: 100%;
+    border: none;
+    padding: 10px;
+}
+
+.item-alert {
+    display: grid;
+    width: 100%;
+    border: none;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 8px 1px black;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.box-alert-silang {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: none;
+    align-items: center;
+    position: absolute;
+    top: -50px;
+}
+
+.box-alert-silang button {
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 5px solid white;
+    border-radius: 50%;
+    color: white;
+}
+
+.item-alert p {
+    font-size: 1.2rem;
+    position: relative;
+    display: flex;
+    text-align: center;
+    border: none;
 }

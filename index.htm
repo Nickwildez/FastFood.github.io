@@ -260,7 +260,7 @@
 
     <section class="form-cart">
         <div class="content-form-cart">
-            <form action="" class="item-formCart">
+            <form action="" class="item-formCart" name="FormCart-belanja" method="post">
 
                 <button class="fa-solid fa-xmark" id="close-form" onclick="closeForm(event)"></button>
                 <h2>daftar pesanan</h2>
@@ -270,22 +270,25 @@
                 </div>
 
                 <div class="box-textarea">
-                    <textarea name="" class="catatan-pesanan" id="catatanPesanan" cols="40" rows="3"
+                    <textarea name="Catatan Pesanan" class="catatan-pesanan" id="catatanPesanan" cols="40" rows="3"
                         placeholder="ada yang mau ditambahkan?"></textarea>
                     <ul id="list-pesanan"></ul>
-                    <textarea name="" class="data-pesanan" id="dataPesanan" cols="40" rows="6" readonly
+                    <textarea name="Pesanan Pelanggan" class="data-pesanan" id="dataPesanan" cols="40" rows="6" readonly
                         required></textarea>
                 </div>
 
                 <div class="box-total-semua-harga">
                     <h2>total semua harga: </h2>
-                    <input type="text" name="" id="semua-total-harga" readonly>
+                    <input type="text" name="Total Semua Harga" id="semua-total-harga" readonly>
                 </div>
 
                 <div class="box-nomer-nama-alamat">
-                    <input type="number" name="" id="nomerWa" class="nomer-wa" placeholder="masukan nomer wa" required>
-                    <input type="text" name="" id="namaAnda" class="nama-anda" placeholder="masukan nama anda" required>
-                    <input type="text" id="Alamat" class="alamat-rumah" placeholder="alamat lengkap" required>
+                    <input type="number" name="no.wa" id="nomerWa" class="nomer-wa" placeholder="masukan nomer wa"
+                        required>
+                    <input type="text" name="Nama" id="namaAnda" class="nama-anda" placeholder="masukan nama anda"
+                        required>
+                    <input type="text" name="alamat" id="Alamat" class="alamat-rumah" placeholder="alamat lengkap"
+                        required>
                 </div>
 
                 <button type="submit" class="button-kirim">
@@ -307,8 +310,24 @@
                     <p>pesanan sudah terkirim, terima kasih sudah memesan
                         <i class="fa-regular fa-face-smile-wink"></i>
                     </p>
-                    <button type="submit" class="back-home">kembali</button>
+                    <button type="button" class="back-home">kembali</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alert" id="Alert">
+        <div class="content-alert">
+            <div class="item-alert">
+                <div class="box-alert-silang">
+                    <button type="button" class="fa-solid fa-xmark" id="button-alert"></button>
+                </div>
+
+                <br>
+                <br>
+                
+                <p>harap memesan pesanan terlebih dahulu, sebelum
+                    mengirim pesanan</p>
             </div>
         </div>
     </section>

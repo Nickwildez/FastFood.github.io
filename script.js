@@ -54,7 +54,7 @@ function showConfirmation(nama, harga, imgSrc) {
     const fotoPesanan = bukaKonfirmasi.querySelector('#foto-pesanan');
 
     document.getElementById("pemiliHanukuran").value = "";
-    count = 0; 
+    count = 0;
     document.getElementById("angka").textContent = count;
     updateTotalHarga();
 
@@ -136,19 +136,19 @@ function hapusPesanan(liElement, pesananText) {
     const listPesanan = document.getElementById("list-pesanan");
     const dataPesananTextarea = document.getElementById("dataPesanan");
     const totalHargaInput = document.getElementById("semua-total-harga");
-    
+
     listPesanan.removeChild(liElement);
-    const pesananToRemove = pesananText.trim().split(" = Rp")[0]; 
+    const pesananToRemove = pesananText.trim().split(" = Rp")[0];
     const pesananArray = dataPesananTextarea.value.split("\n");
     const newDataPesanan = pesananArray.filter(pesanan => pesanan !== pesananToRemove).join("\n");
     dataPesananTextarea.value = newDataPesanan;
-    
+
     cartCount--;
     const NotifikasiKeranjang = document.getElementById("cart-notification");
     NotifikasiKeranjang.textContent = cartCount;
 
     updateTotalSemuaHarga();
-}    
+}
 
 function removeAll() {
     const dataPesananTextarea = document.getElementById("dataPesanan");
@@ -175,3 +175,40 @@ function updateTotalSemuaHarga() {
     document.getElementById("semua-total-harga").value = totalSemuaHarga;
 }
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbznLV46vcaHFz_odo7vfrZt_SbggTrfRHwesOQ9ZilLUDYfabPp4J48oZBA-x9W67B1AQ/exec'
+const form = document.forms['FormCart-belanja']
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    const dataPesananTextarea = document.getElementById("dataPesanan");
+    if (dataPesananTextarea.value.trim() === '') {
+        document.querySelector('.alert').style.display = 'grid';
+        return false; 
+    }
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+
+            cartCount = 0;
+            const NotifikasiKeranjang = document.getElementById('cart-notification');
+            NotifikasiKeranjang.textContent = cartCount;
+
+            const listPesanan = document.getElementById('list-pesanan');
+            while (listPesanan.firstChild) {
+                listPesanan.removeChild(listPesanan.firstChild);
+            }
+
+            document.getElementById("Popup").style.display = "grid";
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+});
+
+document.querySelector(".back-home").onclick = function () {
+    document.getElementById("Popup").style.display = "none";
+};
+
+document.getElementById("button-alert").onclick = function () {
+    document.querySelector('.alert').style.display = 'none';
+};
