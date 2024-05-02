@@ -7,6 +7,16 @@ function buttonCatatan() {
     bukaCatatan.classList.toggle('bukac');
 }
 
+function buttonHomeInfo() {
+    const showInfo = document.querySelector('.home-info');
+    showInfo.classList.add('bukaInfo')
+}
+
+function closeHomeInfo() {
+    const closeInfo = document.querySelector('.home-info');
+    closeInfo.classList.remove('bukaInfo')
+}
+
 function openKeranjang() {
     const bukaKeranjang = document.querySelector('.form-cart');
     bukaKeranjang.classList.add('bukaf');
@@ -17,6 +27,23 @@ function closeForm(event) {
     const tutupKeranjang = document.querySelector('.form-cart');
     tutupKeranjang.classList.remove('bukaf');
 }
+
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
+window.onscroll = () => {
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 150;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+};
 
 function itemUkuran(btukuran) {
     const pemilihanUkuran = document.getElementById("pemiliHanukuran");
@@ -140,7 +167,8 @@ function hapusPesanan(liElement, pesananText) {
     listPesanan.removeChild(liElement);
     const pesananToRemove = pesananText.trim().split(" = Rp")[0];
     const pesananArray = dataPesananTextarea.value.split("\n");
-    const newDataPesanan = pesananArray.filter(pesanan => pesanan !== pesananToRemove).join("\n");
+    const newDataPesananArray = pesananArray.filter(pesanan => !pesanan.includes(pesananToRemove));
+    const newDataPesanan = newDataPesananArray.join("\n");
     dataPesananTextarea.value = newDataPesanan;
 
     cartCount--;
@@ -163,7 +191,6 @@ function removeAll() {
     }
 }
 
-
 function updateTotalSemuaHarga() {
     let totalSemuaHarga = 0;
     const listPesanan = document.querySelectorAll("#list-pesanan li");
@@ -171,7 +198,7 @@ function updateTotalSemuaHarga() {
         const harga = parseInt(item.textContent.split("=")[1].trim().substring(3));
         totalSemuaHarga += harga;
     });
-    
+
     const formatteTotal = "Rp." + totalSemuaHarga.toLocaleString();
     document.getElementById("semua-total-harga").value = formatteTotal;
 }
@@ -185,7 +212,7 @@ form.addEventListener('submit', e => {
     const dataPesananTextarea = document.getElementById("dataPesanan");
     if (dataPesananTextarea.value.trim() === '') {
         document.querySelector('.alert').style.display = 'grid';
-        return false; 
+        return false;
     }
 
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

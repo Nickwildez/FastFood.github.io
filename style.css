@@ -125,11 +125,236 @@ body.loaded {
     transition: .6s ease;
 }
 
-.nav-content a:hover {
+.nav-content a:hover,
+.nav-content a.active {
     background-color: black;
     color: #ffff00;
     border-radius: 50%;
     transform: translateY(-20px);
+}
+
+#button-info {
+    position: relative;
+    color: black;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    outline: none !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    z-index: 1;
+    background-color: transparent;
+    transition: .6s ease;
+}
+
+#button-info:hover,
+#button-info:focus{
+    background-color: black;
+    color: #ffff00;
+    border-radius: 50%;
+    transform: translateY(-20px);
+}
+
+.home-info{
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    background-color: white;
+}
+
+.home-info.bukaInfo{
+    display: grid;
+    animation-name: openInfo;
+}
+
+@keyframes openInfo {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-homeinfo{
+    display: grid;
+    width: 100%;
+    position: relative;
+    border: none;
+    padding: 10px;
+}
+
+.box-home-info {
+    width: 100%;
+    display: grid;
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0  0 8px 1px black;
+    padding: 10px;
+}
+
+.box-info-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.box-info-text h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+}
+
+#button-closeInfo{
+    position: absolute;
+    right: -25px;
+    top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+    width: 40px;
+    height: 40px;
+}
+
+.box-contact{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.box-contact a{
+    background-color: #ffa600;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    font-size: 3rem;
+    overflow: hidden;
+    outline: none !important;
+    border: none;
+    border-radius: 50%;
+    transition: .6s ease;
+}
+
+.box-contact a:hover,
+.box-contact a:focus{
+    transform: translateY(-10px);
+}
+
+.box-contact #whatsapp::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -100%;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transition: .6s ease;
+    background-color: #00f100;
+}
+
+.box-contact #whatsapp:hover:after {
+    top: 0;
+}
+
+.box-contact #email::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transition: .6s ease;
+    background-color: #0066ff;
+}
+
+.box-contact #email:hover:after {
+    top: 0;
+}
+
+.box-contact #maps::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -100%;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transition: .6s ease;
+    background-color: #ff0000;
+}
+
+.box-contact #maps:hover:after {
+    top: 0;
+}
+
+.nama-dev{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: none;
+    width: 100%;
+}
+
+.nama-dev p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .home {
@@ -351,6 +576,7 @@ body.loaded {
     top: 0;
     border: none;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     z-index: 10000;
     animation-duration: .5s;
@@ -380,6 +606,7 @@ body.loaded {
     width: 100%;
     position: relative;
     border: none;
+    padding: 10px;
 }
 
 .box-show {

@@ -17,16 +17,41 @@
             <button id="buttonCartShopping" class="fa-solid fa-cart-shopping" onclick="openKeranjang()">
                 <span id="cart-notification">0</span>
             </button>
-            <a href="#" class="fa-solid fa-home"></a>
+            <a href="#home" class="fa-solid fa-home"></a>
             <a href="#drink" class="fa-solid fa-glass-water"></a>
             <a href="#food" class="fa-solid fa-burger"></a>
+            <button class="fa-solid fa-comment" id="button-info" onclick="buttonHomeInfo()"></button>
         </nav>
     </header>
 
-    <section class="home">
+    <section class="home-info">
+        <div class="content-homeinfo">
+            <div class="box-home-info">
+                <div class="box-info-text">
+                    <h2>silahkan hubungi </h2>
+                    <button class="fa-solid fa-xmark" id="button-closeInfo" onclick="closeHomeInfo()"></button>
+                </div>
+
+                <div class="box-contact">
+                    <a href="https://wa.me/6285774546860?text=Halo,%20saya%20menghubungi%20Anda%20dari%20situs%20web%20anda."
+                        class="fa-brands fa-whatsapp" id="whatsapp"></a>
+                    <a href="mailto:wildeznick@gmail.com" class="fa-regular fa-envelope" id="email"></a>
+                    <a href="https://maps.app.goo.gl/r6MvHPvCmU4D1aUv7" id="maps" class="fa-solid fa-location-dot"></a>
+                </div>
+
+                <div class="nama-dev">
+                    <p>maret 2024, dev:</p>
+                    <p>m.farrel dwi andhika</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="home" id="home" data-aos="fade-up">
         <div class="home-content">
             <div class="judul-home">
-                <h2>fast food</h2>
+                <h2 data-aos="fade-up">fast food</h2>
             </div>
 
             <div class="text-home">
@@ -325,7 +350,7 @@
 
                 <br>
                 <br>
-                
+
                 <p>harap memesan pesanan terlebih dahulu, sebelum
                     mengirim pesanan</p>
             </div>
@@ -333,6 +358,13 @@
     </section>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
+
 </body>
 
 </html>
