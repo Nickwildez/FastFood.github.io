@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -154,14 +153,14 @@ body.loaded {
 }
 
 #button-info:hover,
-#button-info:focus{
+#button-info:focus {
     background-color: black;
     color: #ffff00;
     border-radius: 50%;
     transform: translateY(-20px);
 }
 
-.home-info{
+.home-info {
     display: none;
     top: 0;
     left: 0;
@@ -181,7 +180,7 @@ body.loaded {
     background-color: white;
 }
 
-.home-info.bukaInfo{
+.home-info.bukaInfo {
     display: grid;
     animation-name: openInfo;
 }
@@ -192,13 +191,13 @@ body.loaded {
         transform: translateX(-100%);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-.content-homeinfo{
+.content-homeinfo {
     display: grid;
     width: 100%;
     position: relative;
@@ -212,11 +211,11 @@ body.loaded {
     position: relative;
     border: none;
     border-radius: 10px;
-    box-shadow: 0  0 8px 1px black;
+    box-shadow: 0 0 8px 1px black;
     padding: 10px;
 }
 
-.box-info-text{
+.box-info-text {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -225,7 +224,7 @@ body.loaded {
     position: relative;
 }
 
-.box-info-text h2{
+.box-info-text h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,7 +234,7 @@ body.loaded {
     position: relative;
 }
 
-#button-closeInfo{
+#button-closeInfo {
     position: absolute;
     right: -25px;
     top: -30px;
@@ -252,7 +251,7 @@ body.loaded {
     height: 40px;
 }
 
-.box-contact{
+.box-contact {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -262,7 +261,7 @@ body.loaded {
     padding: 10px;
 }
 
-.box-contact a{
+.box-contact a {
     background-color: #ffa600;
     position: relative;
     color: white;
@@ -283,7 +282,7 @@ body.loaded {
 }
 
 .box-contact a:hover,
-.box-contact a:focus{
+.box-contact a:focus {
     transform: translateY(-10px);
 }
 
@@ -335,7 +334,7 @@ body.loaded {
     top: 0;
 }
 
-.nama-dev{
+.nama-dev {
     display: grid;
     justify-content: center;
     align-items: center;
@@ -355,6 +354,105 @@ body.loaded {
     border: none;
     font-size: 1.2rem;
     font-weight: 500;
+}
+
+.pembukaan-burger {
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+    background: url(image/pembukaan.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pembukaan-burger::before {
+    content: "";
+    background-color: #00000077;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.content-pembukaan {
+    display: grid;
+    position: relative;
+    width: 100%;
+    border: none;
+    padding: 10px;
+}
+
+.box-pembukaan {
+    display: grid;
+    justify-content: space-between;
+    width: 100%;
+    border: none;
+    z-index: 2;
+    text-align: center;
+    position: relative;
+    background: transparent;
+    padding: 10px;
+    top: -60px;
+}
+
+.box-judul-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border: none;
+}
+
+.box-judul-h h2 {
+    font-size: 2rem;
+    display: flex;
+    text-align: center;
+    border: none;
+    position: relative;
+    color: white;
+    text-shadow: 7px 5px 5px black;
+}
+
+.box-button-pembukaan {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+.button-pembukaan {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 black;
+    position: relative;
+    padding: 10px;
+    background-color: #ffa600;
+    color: white;
+    transition: .6s ease;
+}
+
+.button-pembukaan:hover,
+.button-pembukaan:focus {
+    background-color: #a86d00;
 }
 
 .home {
