@@ -359,7 +359,7 @@ body.loaded {
 .pembukaan-burger {
     display: grid;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     border-radius: 0 0 10px 10px;
     position: relative;
     width: 100%;
@@ -399,7 +399,7 @@ body.loaded {
     position: relative;
     background: transparent;
     padding: 10px;
-    top: -100px;
+    top: 100px;
 }
 
 .box-judul-h {
