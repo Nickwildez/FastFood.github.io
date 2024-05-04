@@ -33,13 +33,32 @@ body.loaded {
 
 .header-to-bottom {
     position: fixed;
-    display: grid;
+    display: none;
     flex-wrap: wrap;
     width: 100%;
     background-color: transparent;
     bottom: 0;
     border: none;
     z-index: 9999;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.header-to-bottom.visible{
+    display: grid;
+    animation-name: visibleHeader;
+}
+
+@keyframes visibleHeader{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-content {
@@ -386,7 +405,6 @@ body.loaded {
     position: relative;
     width: 100%;
     border: none;
-    padding: 10px;
 }
 
 .box-pembukaan {
@@ -398,7 +416,6 @@ body.loaded {
     text-align: center;
     position: relative;
     background: transparent;
-    padding: 10px;
     top: 100px;
 }
 
@@ -424,7 +441,6 @@ body.loaded {
 
 .box-button-pembukaan {
     display: grid;
-    justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;

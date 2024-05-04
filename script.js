@@ -45,6 +45,22 @@ window.onscroll = () => {
     });
 };
 
+window.addEventListener('scroll', function () {
+    const headerOpenHome = document.querySelector('.header-to-bottom');
+    const sectionPembukaan = document.getElementById("pembukaan");
+    const headerHeight = headerOpenHome.offsetHeight;
+    const headerSectionOpening = sectionPembukaan.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollHeight = window.scrollY;
+
+    if (scrollHeight > headerSectionOpening - headerHeight) {
+        headerOpenHome.classList.add('visible');
+    }
+    else {
+        headerOpenHome.classList.remove('visible');
+    }
+})
+
 function itemUkuran(btukuran) {
     const pemilihanUkuran = document.getElementById("pemiliHanukuran");
     pemilihanUkuran.value = btukuran;
