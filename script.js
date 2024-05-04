@@ -61,6 +61,14 @@ window.addEventListener('scroll', function () {
     }
 })
 
+function openContentAll(){
+    const secHome = document.querySelector('.home');
+    const secMenu = document.querySelector('.menu');
+
+    secHome.classList.add('openHome');
+    secMenu.classList.add('openMenu');
+}
+
 function itemUkuran(btukuran) {
     const pemilihanUkuran = document.getElementById("pemiliHanukuran");
     pemilihanUkuran.value = btukuran;

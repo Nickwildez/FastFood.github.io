@@ -82,6 +82,7 @@ body.loaded {
     top: -90px;
     display: flex;
     cursor: pointer;
+    box-shadow: 0 0 8px 2px black;
     color: black;
     align-items: center;
     justify-content: center;
@@ -472,7 +473,7 @@ body.loaded {
 }
 
 .home {
-    display: grid;
+    display: none;
     width: 100%;
     min-height: 100vh;
     align-items: center;
@@ -483,6 +484,25 @@ body.loaded {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 8px;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.home.openHome{
+    display: grid;
+    animation-name: openSecHome;
+}
+
+@keyframes openSecHome {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .home-content {
@@ -557,11 +577,30 @@ body.loaded {
     position: relative;
     text-align: center;
     width: 100%;
-    display: grid;
+    display: none;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.menu.openMenu{
+    display: grid;
+    animation-name: openSecMenu;
+}
+
+@keyframes openSecMenu{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .menu-content {
