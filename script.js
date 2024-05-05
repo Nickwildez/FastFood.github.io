@@ -9,12 +9,12 @@ function buttonCatatan() {
 
 function buttonHomeInfo() {
     const showInfo = document.querySelector('.home-info');
-    showInfo.classList.add('bukaInfo')
+    showInfo.classList.add('bukaInfo');
 }
 
 function closeHomeInfo() {
     const closeInfo = document.querySelector('.home-info');
-    closeInfo.classList.remove('bukaInfo')
+    closeInfo.classList.remove('bukaInfo');
 }
 
 function openKeranjang() {
@@ -63,10 +63,12 @@ window.addEventListener('scroll', function () {
 
 function openContentAll(){
     const secHome = document.querySelector('.home');
-    const secMenu = document.querySelector('.menu');
+    const secDrink = document.getElementById("drink");
+    const secFood = document.getElementById("food");
 
     secHome.classList.add('openHome');
-    secMenu.classList.add('openMenu');
+    secDrink.classList.add('openMenu')
+    secFood.classList.add('openMenu')
 }
 
 function itemUkuran(btukuran) {

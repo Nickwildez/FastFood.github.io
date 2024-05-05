@@ -40,7 +40,7 @@ body.loaded {
     bottom: 0;
     border: none;
     z-index: 9999;
-    animation-duration: .5s;
+    animation-duration: .8s;
     animation-fill-mode: forwards;
 }
 
@@ -208,7 +208,7 @@ body.loaded {
 @keyframes openInfo {
     0% {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-100px);
     }
 
     100% {
@@ -406,18 +406,18 @@ body.loaded {
     position: relative;
     width: 100%;
     border: none;
+    padding: 15px;
 }
 
 .box-pembukaan {
     display: grid;
-    justify-content: space-between;
     width: 100%;
     border: none;
     z-index: 2;
     text-align: center;
     position: relative;
     background: transparent;
-    top: 100px;
+    top: 150px;
 }
 
 .box-judul-h {
@@ -446,6 +446,7 @@ body.loaded {
     width: 100%;
     position: relative;
     border: none;
+    padding: 10px;
 }
 
 .button-pembukaan {
@@ -577,7 +578,7 @@ body.loaded {
     position: relative;
     text-align: center;
     width: 100%;
-    display: none;
+    display: grid;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
@@ -586,7 +587,12 @@ body.loaded {
     animation-fill-mode: forwards;
 }
 
-.menu.openMenu{
+#drink,#food{
+    display: none;
+}
+
+#drink.openMenu,
+#food.openMenu{
     display: grid;
     animation-name: openSecMenu;
 }
