@@ -1218,6 +1218,7 @@ body.loaded {
 #semua-total-harga {
     border: none;
     display: flex;
+    padding: 5px;
     width: 100%;
     position: relative;
     background: transparent;

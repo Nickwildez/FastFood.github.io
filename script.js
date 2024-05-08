@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("loaded");
 });
 
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
 function buttonCatatan() {
     const bukaCatatan = document.getElementById('catatanPesanan');
     bukaCatatan.classList.toggle('bukac');
