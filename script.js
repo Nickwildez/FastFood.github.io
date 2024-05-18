@@ -67,21 +67,28 @@ window.addEventListener('scroll', function () {
 
 function openContentAll(){
     const secHome = document.querySelector('.home');
+    const secPembukaan = document.querySelector('.pembukaan-burger');
     const secDrink = document.getElementById("drink");
     const secFood = document.getElementById("food");
+    const secJarak = document.querySelector('.jarak');
 
     secHome.classList.add('openHome');
+    secPembukaan.style.display = "none";
     secDrink.classList.add('openMenu')
     secFood.classList.add('openMenu')
+    secJarak.style.display = "grid";
 }
 
-function itemUkuran(btukuran) {
+function itemUkuran(btukuran, tambahHargaUkuran) {
     const pemilihanUkuran = document.getElementById("pemiliHanukuran");
     pemilihanUkuran.value = btukuran;
+    hargaUkuran = tambahHargaUkuran;
+    updateTotalHarga();
 }
 
 let count = 0;
 const numberElement = document.getElementById("angka");
+let hargaUkuran = 0;
 
 function tambahAngka() {
     count += 1;
@@ -100,7 +107,7 @@ function kurangAngka() {
 function updateTotalHarga() {
     const hargaPerItem = parseFloat(document.querySelector('.InputhargaPesanan').value);
     const jumlahPesanan = count;
-    const totalHarga = hargaPerItem * jumlahPesanan;
+    const totalHarga = (hargaPerItem + hargaUkuran) * jumlahPesanan;
     document.getElementById("totalHargaInput").value = totalHarga;
 }
 

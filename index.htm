@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="image/logo icon.jpg">
-    <title>fast food</title>
+    <title>nick food</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <button id="buttonCartShopping" class="fa-solid fa-cart-shopping" onclick="openKeranjang()">
                 <span id="cart-notification">0</span>
             </button>
-            <a href="#pembukaan" class="fa-solid fa-home"></a>
+            <a href="#home" class="fa-solid fa-home"></a>
             <a href="#drink" class="fa-solid fa-glass-water"></a>
             <a href="#food" class="fa-solid fa-burger"></a>
             <button class="fa-solid fa-exclamation" id="button-info" onclick="buttonHomeInfo()"></button>
@@ -53,7 +53,7 @@
             <div class="box-pembukaan">
 
                 <div class="box-judul-h">
-                    <h2>welcom to fast food</h2>
+                    <h2>welcom to nick food</h2>
                 </div>
 
                 <div class="box-button-pembukaan">
@@ -92,13 +92,13 @@
                     <h3 class="fa-solid fa-star">
                         <p>4.5</p>
                     </h3>
-                    <img src="image/boba.jpg" alt="">
+                    <img src="image2/boba milk.jpg" alt="">
                     <div class="text-menu">
                         <h2>boba milk</h2>
                         <div class="box-harga-add">
                             <p>rp 16.000</p>
                             <button class="fa-solid fa-cart-plus" id="add-to-cart"
-                                onclick="showConfirmation('boba milk', 16000, 'image/boba.jpg')"></button>
+                                onclick="showConfirmation('boba milk', 16000, 'image2/boba milk.jpg')"></button>
                         </div>
                     </div>
                 </div>
@@ -192,13 +192,13 @@
                     <h3 class="fa-solid fa-star">
                         <p>4.8</p>
                     </h3>
-                    <img src="image/kebab1.jpg" alt="">
+                    <img src="image2/kebab.jpg" alt="">
                     <div class="text-menu">
                         <h2>kebab</h2>
                         <div class="box-harga-add">
                             <p>rp 15.000</p>
                             <button class="fa-solid fa-cart-plus" id="add-to-cart"
-                                onclick="showConfirmation('kebab', 15000, 'image/kebab1.jpg')"></button>
+                                onclick="showConfirmation('kebab', 15000, 'image2/kebab.jpg')"></button>
                         </div>
                     </div>
                 </div>
@@ -207,13 +207,13 @@
                     <h3 class="fa-solid fa-star">
                         <p>5.0</p>
                     </h3>
-                    <img src="image/saghetti1.jpg" alt="">
+                    <img src="image2/spaighetti.jpg" alt="">
                     <div class="text-menu">
                         <h2>spaigetti</h2>
                         <div class="box-harga-add">
                             <p>rp 18.000</p>
                             <button class="fa-solid fa-cart-plus" id="add-to-cart"
-                                onclick="showConfirmation('spaigetti', 18000, 'image/saghetti1.jpg')"></button>
+                                onclick="showConfirmation('spaigetti', 18000, 'image2/spaighetti.jpg')"></button>
                         </div>
                     </div>
                 </div>
@@ -222,13 +222,13 @@
                     <h3 class="fa-solid fa-star">
                         <p>4.5</p>
                     </h3>
-                    <img src="image/hotdog.jpg" alt="">
+                    <img src="image2/hotdog.jpg" alt="">
                     <div class="text-menu">
                         <h2>hotdog</h2>
                         <div class="box-harga-add">
                             <p>rp 15.000</p>
                             <button class="fa-solid fa-cart-plus" id="add-to-cart"
-                                onclick="showConfirmation('hotdog', 15000, 'image/hotdog.jpg')"></button>
+                                onclick="showConfirmation('hotdog', 15000, 'image2/hotdog.jpg')"></button>
                         </div>
                     </div>
                 </div>
@@ -237,13 +237,13 @@
                     <h3 class="fa-solid fa-star">
                         <p>5.1</p>
                     </h3>
-                    <img src="image/pizza1.jpg" alt="">
+                    <img src="image2/pizza.jpg" alt="">
                     <div class="text-menu">
                         <h2>pizza</h2>
                         <div class="box-harga-add">
                             <p>rp 50.000</p>
                             <button class="fa-solid fa-cart-plus" id="add-to-cart"
-                                onclick="showConfirmation('pizza', 50000, 'image/pizza1.jpg')"></button>
+                                onclick="showConfirmation('pizza', 50000, 'image2/pizza.jpg')"></button>
                         </div>
                     </div>
                 </div>
@@ -253,8 +253,9 @@
         </div>
     </section>
 
-    <br>
-    <br>
+    <section class="jarak">
+        <div class="content-jarak"></div>
+    </section>
 
     <section class="showconfirmation">
         <div class="showcontent">
@@ -274,9 +275,12 @@
                 <div class="box-ukuran">
                     <h2>ukuran :</h2>
                     <div class="item-ukuran">
-                        <button class="btukuran" onclick="itemUkuran('anda memilih : kecil')">kecil</button>
-                        <button class="btukuran" onclick="itemUkuran('anda memilih : sedang')">sedang</button>
-                        <button class="btukuran" onclick="itemUkuran('anda memilih : besar')">besar</button>
+                        <button class="btukuran" value="kecil"
+                            onclick="itemUkuran('anda memilih : kecil', 0)">kecil</button>
+                        <button class="btukuran" value="sedang"
+                            onclick="itemUkuran('anda memilih : sedang', 3000)">sedang</button>
+                        <button class="btukuran" value="besar"
+                            onclick="itemUkuran('anda memilih : besar', 5000)">besar</button>
                     </div>
                     <input class="textUkuran" type="text" placeholder="anda memilih :" id="pemiliHanukuran" readonly>
                 </div>
